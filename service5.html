@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0052)https://www.printersclub.in/free_GSM_Calculator.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="author" content="Printers club of India Limited">
+    <script type="text/javascript" src="./service5_files/jquery.min.js.download"></script>
+    <script type="text/javascript" src="./service5_files/select2.min.js.download"></script>
+    <script type="text/javascript">
+        document.onkeydown = function (e) {
+            if (event.keyCode == 123) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        $(window).on('beforeunload', function () {
+            $("#blockMessage").css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + $(window).scrollTop()) + "px");
+            $("#blockMessage").css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+            $("#blockMessage").show();
+        });
+
+        function SetLoadingMessage(val) {
+            $("#blockMessage").css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + $(window).scrollTop()) + "px");
+            $("#blockMessage").css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+            if (val == true)
+                $("#blockMessage").show();
+            else
+                $("#blockMessage").hide();
+        }
+    </script>
+    <!-- Stylesheets
+    ============================================= -->
+    <link rel="icon" type="image/png" href="https://www.printersclub.in/f_Icon.ico"><link href="./service5_files/css" rel="stylesheet" type="text/css"><link rel="stylesheet" href="./service5_files/bootstrap.css" type="text/css"><link rel="stylesheet" href="./service5_files/style.css" type="text/css"><link rel="stylesheet" href="./service5_files/swiper.css" type="text/css"><link rel="stylesheet" href="./service5_files/dark.css" type="text/css"><link rel="stylesheet" href="./service5_files/font-icons.css" type="text/css"><link rel="stylesheet" href="./service5_files/animate.css" type="text/css"><link rel="stylesheet" href="./service5_files/magnific-popup.css" type="text/css"><link rel="stylesheet" href="./service5_files/custom.css" type="text/css"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Document Title
+    ============================================= -->
+    <title>
+	Free Paper GSM Calculator tool 
+</title>
+    <style type="text/css">
+        .loading-message {
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid #00FFFF; /* CYAN */
+            border-right: 16px solid #FF00FF; /* Megenta */
+            border-bottom: 16px solid #FFFF33; /* Yellow */
+            border-left: 16px solid #000000; /* Yellow */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            margin: 0px auto;
+            margin-top: 100px;
+            animation: spin 2s linear infinite;
+        }
+
+        .block-ui-style {
+            height: 100%;
+            min-height: 100%;
+            display: none;
+            z-index: 6;
+            position: absolute;
+            border: none;
+            background-color: #5e0000;
+            width: 100%;
+            opacity: 0.6;
+        }
+
+        .dark-link {
+            color: white;
+            font-size: 11px;
+        }
+
+            .dark-link:hover {
+                color: yellow;
+            }
+    </style>
+    <script type="text/javascript">
+        function getQueryStringValue(key) {
+            return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+        }
+    </script>
+    
+    <style type="text/css">
+        label {
+            margin-bottom: 0px;
+        }
+
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+            height: 250px;
+            padding: 5px 5px;
+            border-radius: 5px;
+            border: 2px solid gray;
+            margin: 8px;
+        }
+
+        .btn-upl {
+            color: gray;
+            border: none;
+            width: 100%;
+            background-color: white;
+            padding: 0px 3px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .upload-btn-wrapper input[type=file] {
+            font-size: 300px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+    </style>
+    <script language="javascript" type="text/javascript">
+        function showResult() {
+            var gsm = calculate();
+            $("#resultLb").text(gsm.toFixed(3));
+            $("#result").show(1000);
+        }
+        function calculate() {
+            var width = $("#txtWidth").val();
+            var height = $("#txtHeight").val();
+            width = getValueInInch(width);
+            height = getValueInInch(height);
+            var noOfSheets = $("#txtNumberOfSheets").val();
+            var wt = $("#txtWeight").val();
+            var wtOf500 = getWeightOf500Sheets(wt, noOfSheets);
+            var GSM = (wtOf500 * 3100) / (width * height);
+            return GSM;
+        }
+        function getWeightOf500Sheets(wt, noOfSheets) {
+            return (wt / noOfSheets) * 500;
+        }
+        function getValueInInch(val) {
+            var unit = $("#drdCat1").val();
+            val = val * 1.0;
+            if (unit == 1)
+                return val;
+            else if (unit == 2)
+                return val * 0.0393701;
+            else if (unit == 3)
+                return val * 0.393701;
+
+        }
+    </script>
+<link href="./service5_files/select2.min.css" type="text/css" rel="stylesheet"><link href="./service5_files/StyleSheet.css" type="text/css" rel="stylesheet"><link href="./service5_files/templateItem.css" type="text/css" rel="stylesheet"></head>
+<body class="stretched device-xl has-plugin-easing has-plugin-bootstrap has-plugin-counter has-plugin-form has-plugin-ajaxform has-plugin-subscribeform">
+    <script type="text/javascript">
+        SetLoadingMessage(true);
+    </script>
+    <form method="post" action="https://www.printersclub.in/free_GSM_Calculator.aspx" id="aspnetForm">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTY1NDU2MTA1Mg9kFgJmD2QWAgIDD2QWAgIEDw8WAh4HVmlzaWJsZWhkZGRnkc3zgflZssNC4c0T1hGInuIpVg==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./service5_files/WebResource.axd" type="text/javascript"></script>
+
+
+<script src="./service5_files/ScriptResource.axd" type="text/javascript"></script>
+<script src="./service5_files/ScriptResource(1).axd" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="AD51630C">
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0">
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0">
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$scriptManager1', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+        <div class="container-fluid">
+            <div id="blockMessage" class="block-ui-style" style="top: 0px; left: 0px; display: none;">
+                <div class="loading-message"></div>
+            </div>
+        </div>
+
+       
+            
+            
+    <section id="page-title" class="page-title-center">
+			            <h1>Free Paper GSM Calculator tool</h1>
+				            
+				            <ol class="breadcrumb">
+					            <li class="breadcrumb-item"><a href="https://www.printersclub.in/Default.aspx">Home</a></li>
+					            <li class="breadcrumb-item"><a href="https://www.printersclub.in/free_GSM_Calculator.aspx">Paper GSM Calculator</a></li>
+					            <li class="breadcrumb-item active" aria-current="page">Paper GSM Calculator</li>
+				            </ol>
+		                </section>
+    <section id="content">
+			<div class="content-wrap" style="max-width:600px;margin:0px auto;padding:10px">
+				<div class="container clearfix">
+					<div class="row align-items-stretch col-mb-50 mb-0">
+							<div class="form-widget">
+	                            <div class="row">
+										<div class="col-md-12 form-group">
+											<label for="template-contactform-service" class="required">Select Unit</label>
+											<select id="drdCat1" class="sm-form-control select2">
+                                                <option value="1">Inches</option>
+                                                <option value="2">MM</option>
+                                                <option value="3">CM</option>
+											</select>
+										</div>
+                                        <div class="w-100"></div>
+										<div class="col-md-12 form-group">
+											<label for="template-contactform-service" class="required">Enter Paper Width</label>
+											<input type="text" id="txtWidth" placeholder="Enter actual width" class="sm-form-control required">
+										</div>
+                                    <div class="w-100"></div>
+										
+										<div class="col-md-12 form-group">
+											<label for="template-contactform-service" class="required">Enter Paper Height</label>
+											<input type="text" id="txtHeight" placeholder="Enter actual height" class="sm-form-control required">
+                                            
+										</div>
+                                        <div class="w-100"></div>
+										<div class="col-md-12 form-group">
+											<label for="template-contactform-service" class="required">Number of Sheets (total weighed sheets)</label>
+											<input type="text" id="txtNumberOfSheets" placeholder="Enter number of sheets" class="sm-form-control required">
+                                        </div>
+                                    <div class="w-100"></div>
+                                        
+										<div class="col-md-12 form-group">
+											<label for="template-contactform-service" class="required">Weight (in kgs)</label>
+                                                <input type="text" id="txtWeight" placeholder="Enter sheets actual weight" class="sm-form-control required">
+                                        </div>
+                                        <div class="w-100"></div>
+
+										<div class="col-md-12 form-group" style="text-align:center">
+                                            <button class="btn btn-danger" onclick="showResult();return false;">Calculate Paper GSM</button>
+                                        </div>
+                                        <div class="w-100"></div>
+										<div id="result" style="text-align:center;display:none" class="col-md-12 form-group alert alert-info">
+											<h4 style="margin-bottom:0px;">The above paper is approx <span style="color:red"><span id="resultLb">300</span> GSM</span> (+/- 10 GSM)</h4>
+                                        </div>
+										
+						</div>
+					</div>
+                </div>
+                    </div>
+                </div>
+    </section>
+
+         
+
+        </div>
+        <!-- #wrapper end -->
+        <!-- Go To Top  ============================================= -->
+        <div id="gotoTop" class="icon-angle-up"></div>
+        <!-- ======================== Footer Scripts ===================== -->
+        <script type="text/javascript" src="./service5_files/jquery.js.download"></script>
+        <script type="text/javascript" src="./service5_files/plugins.min.js.download"></script>
+        <script type="text/javascript" src="./service5_files/functions.js.download"></script>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+//]]>
+</script>
+</form>
+    <script type="text/javascript">
+        SetLoadingMessage(false);
+        $('.select2').select2();
+    </script>
+
+
+</body></html>

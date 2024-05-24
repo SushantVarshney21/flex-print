@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+	<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    document.querySelectorAll('section').forEach(section => {
+                        section.style.display = 'none';
+                    });
+
+                    targetSection.style.display = 'block';
+
+                    if (window.innerWidth <= 768) {
+                        // Smooth scrolling for small screens
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        toggleMenu();
+                    } 
+                }
+            });
+        });
+    });
+
+    function toggleMenu() {
+        const navUl = document.querySelector('nav ul');
+        navUl.classList.toggle('show');
+    }
+</script>
+	 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get all navigation links
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Add click event listeners to each navigation link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                // Prevent the default behavior of the link
+                event.preventDefault();
+                
+                // Get the target URL from the href attribute
+                const targetUrl = link.getAttribute('href');
+
+                // Navigate to the target URL
+                window.location.href = targetUrl;
+            });
+        });
+    });
+</script>
+
+	<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get all sections
+        const sections = document.querySelectorAll('section');
+
+        // Hide all sections except the home section initially
+        sections.forEach(section => {
+            if (section.id !== 'home') {
+                section.style.display = 'none';
+            }
+        });
+
+        // Get all navigation links
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Add click event listeners to each navigation link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                // Prevent the default behavior of the link
+                event.preventDefault();
+                
+                // Get the target URL from the href attribute
+                const targetUrl = link.getAttribute('href');
+
+                // Navigate to the target URL
+                window.location.href = targetUrl;
+            });
+        });
+    });
+</script>
+
+
+    <title>Flex Printing</title>
+</head>
+<body>
+	
+	<header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand mx-auto" href="#" style="margin-left: 50px;">
+                <img src="logo%20(2).jpeg" alt="Logo" style="width: 350px; height: 130px">
+            </a>
+
+            <style>
+                @media (max-width: 576px) {
+                    .navbar {
+                        background-color: white!important; /* Change the background color for small screens */
+                    }
+
+                    .navbar-brand img {
+                        width: 100%;
+                        height: auto;
+                        max-width: 200px;
+                        max-height: 80px;
+                    }
+                }
+
+                @media (min-width: 992px) {
+                    .navbar {
+                        background-color: white; /* Apply bg-light class on large screens */
+                    }
+                }
+            </style>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="color: black"></span>
+            </button>
+        </div>
+
+      <div class="container text-center">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#home" style="color:black;"><b>HOME</b></a></li>
+            <li class="nav-item"><a class="nav-link" href="#about" style="color: BLACK;"><b>ABOUT</b></a></li>
+            <li class="nav-item"><a class="nav-link" href="#service" style="color: black;"><b> SERVICES</b></a></li>
+            <li class="nav-item"><a class="nav-link" href="joinus.html" style="color: black;"><b>JOIN US</b></a></li>
+           
+            <li class="nav-item"><a class="nav-link" href="#contact" style="color:black;"><b>CONTACT</b></a></li>
+			 <li class="nav-item"><a class="nav-link" href="login.html" style="color: black;"><b>LOGIN</b></a></li>
+        </ul>
+    </div>
+</div>
+
+        </div>
+    </nav>
+</header>
+
+	
+	<section id="home"  style="margin-top: 70px;">
+		
+		<style>
+  .slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+
+  .slide {
+    min-width: 100%;
+    overflow: hidden;
+    flex: 0 0 auto;
+  }
+
+  img {
+    width: 100%;
+    height: 700px;
+  }
+			@media screen and (max-width: 768px) {
+    .slider {
+      max-width: 100%; /* Ensure the slider takes up the full width on small screens */
+    }
+
+    .slide {
+      max-width: 100%; /* Ensure the slide takes up the full width on small screens */
+    }
+
+    img {
+      max-width: 100%; /* Make sure the image takes up the full width of its container on small screens */
+	  height: 400px;
+    }
+			
+</style>
+</head>
+
+
+
+	<style>
+    .slider-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .slide {
+        min-width: 100%;
+        overflow: hidden;
+    }
+
+    .slide img {
+        width: 100%;
+        height: auto;
+    }
+</style>
+
+<div class="slider-container" style="max-height: 180vh;">
+    <div class="slider">
+        <div class="slide">
+            <img src="https://www.saraads.com/img/site/flex-vinyl-printing1.jpg" alt="Image 1">
+        </div>
+        <div class="slide">
+            <img src="https://i.pinimg.com/originals/fa/24/0f/fa240fd7996992bf486f83b2816e1dd9.jpg" alt="Image 3">
+        </div>
+    </div>
+</div>
+
+
+<script>
+  // Automatic sliding
+  const slider = document.querySelector('.slider');
+  let slides = document.querySelectorAll('.slide');
+  let currentIndex = 0;
+
+  function goToSlide(index) {
+    slider.style.transform = `translateX(-${index * 100}%)`;
+    currentIndex = index;
+  }
+
+  setInterval(() => {
+    if (currentIndex === slides.length - 1) {
+      goToSlide(0);
+    } else {
+      goToSlide(currentIndex + 1);
+    }
+  }, 2000); // Change slide every 5 seconds
+</script>
+
+
+    
+		<h3 style="text-align: center;margin-top: 30px;color: darkblue">Our Services</h3>
+	
+
+	<div class="services-container">
+<div class="row g-4 text-center row-bounce" style="margin-top: 30px;">
+    <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="150">
+        <div class="service theme-shadow p-lg-4 p-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz2nsqOh3S2BtFDTfj3aHfk1OA_UmDzbG3iBtj3dY52Q&s" alt="Precision Forging" class="img-fluid mb-3" style="max-width: 300px;height: 150px;">
+            <h5 class="mt-4 mb-3"><b>Printing Exhibition</b></h5>
+            <a href="#service" class="box-button">Learn More</a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="250">
+        <div class="service theme-shadow p-lg-4 p-3">
+            <img src="https://5.imimg.com/data5/UL/JT/MY-1023285/flex-printing-services-500x500.jpg" alt="Precision Forging" class="img-fluid mb-3" style="max-width: 300px;height: 150px;">
+            <h5 class="mt-4 mb-3"><b>Printing Services</b></h5>
+            <a href="service4.html" class="box-button">Learn More</a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="350">
+        <div class="service theme-shadow p-lg-4 p-3">
+            <img src="https://4.imimg.com/data4/UE/GB/MY-1758295/flex-printing-machine-500x500.png" alt="Precision Forging" class="img-fluid mb-3" style="max-width: 300px;height: 150px;">
+            <h5 class="mt-4 mb-3"><b>Buy and Sell Machines</b></h5>
+            <a href="service3.html" class="box-button">Learn More</a>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 text-center row-bounce" style="margin-top: 60px;">
+    <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="150">
+        <div class="service theme-shadow p-lg-4 p-3">
+            <img src="https://i.pinimg.com/736x/0e/6d/27/0e6d27179ec66cf41e6a12f7b047cc8b.jpg" alt="Precision Forging" class="img-fluid mb-3" style="max-width: 300px;height: 150px;">
+            <h5 class="mt-4 mb-3"><b>Free Design Files</b></h5>
+            <a href="#service" class="box-button">Learn More</a><br>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="250">
+        <div class="service theme-shadow p-lg-4 p-3">
+            <img src="https://www.qinprinting.com/wp-content/uploads/2023/02/Paper-Weight-Conversion-GSM-to-LBS.jpg"  style="max-width: 300px;height: 150px;">
+            <h5 class="mt-4 mb-3"><b>Pape GSM Calculator</b></h5>
+            <a href="service5.html" class="box-button">Learn More</a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="350">
+        <div class="service theme-shadow p-lg-4 p-3">
+            <img src="https://img1.exportersindia.com/product_images/bc-full/2020/12/7841353/digital-printing-services-1607057901-5647795.jpeg" alt="Precision Forging" class="img-fluid mb-3" style="max-width: 300px;height: 150px;">
+            <h5 class="mt-4 mb-3"><b>Software Services</b></h5>
+            <a href="#service" class="box-button">Learn More</a>
+        </div>
+    </div>
+</div>
+	
+	</div>
+	
+		
+		<div id="home" class="container" style="margin-top: 30px;">
+			
+    <div class="row" >
+        <div class="col-lg-6 col-md-10"  style="margin-top: 50px;">
+            <div class="slider">
+                <div id="imageSlider" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img  style="height: 300px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMR2chCwKBHtCmy9SxVWkB9EaiLgPneJclMNTDp5O4Ug&s" class="d-block w-100" alt="Image 1">
+							
+                        </div>
+                        
+						
+                    </div>
+				
+                </div>
+            </div>
+        </div>
+
+     <div class="col-lg-6 col-md-10"  style="margin-top: 50px;">
+    <div class="content">
+		<h3 style="text-align:center;color: skyblue;margin-top: 30px;color: orangered">ALWAYS READY TO HELP
+PRINTERS & ADVERTISERS</h3>
+       <p style="text-align: justify; color: black; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; line-height: 1.6;">
+ We specialize in providing high-quality flex printing services tailored to meet the needs of printers and advertisers. With years of experience in the industry, we understand the importance of delivering outstanding results that exceed expectations.<br>
+			Experience the difference with our company. Contact us today to learn more about our flex printing services and how we can help bring your vision to life. Together, we can achieve great things.
+</p>
+    </div>
+</div>
+		<style>
+    @media (max-width: 991.98px) {
+        .col-lg-6 {
+            margin-top: -10px; /* Adjust as needed for small screens */
+        }
+    }
+
+    @media (min-width: 992px) {
+        .col-lg-6 {
+            margin-top: -100px; /* Adjust as needed for large screens */
+        }
+    }
+</style>
+	
+    </div>	
+        </div>
+	<div class="services-container">
+    <div class="row g-4 text-center row-bounce" style="margin-top: 30px;">
+        <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="150">
+            <div class="service theme-shadow p-lg-4 p-3" style="background-color: forestgreen;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw2MWtMj6wc5ZfSjv_AAa06Oew_5mOGkpT1D1dFoe1sg&s" alt="Precision Forging" class="img-fluid mb-3" style="max-width: 200px;height: 120px;">
+                <h5 class="mt-4 mb-3"><b style="color: white">Vision</b></h5>
+                <p style="text-align: justify;font-size: 18px;color: white">To be the leading provider of innovative and sustainable printing solutions, setting new standards of excellence in the industry.</p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="250">
+            <div class="service theme-shadow p-lg-4 p-3" style="background-color: midnightblue;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtCMgjqOORuOkgH7KlPQvyeI6z35TWatfUaCWEXNALCA2PnSfwf6TXZC298HqfS8BzGJ0&usqp=CAU" alt="Precision Forging" class="img-fluid mb-3" style="max-width: 200px;height: 120px;">
+                <h5 class="mt-4 mb-3"><b style="color: white">Mission</b></h5>
+                <p style="text-align: justify;font-size: 18px;color: white">To deliver exceptional flex printing services that exceed our clients' expectations, integrity, and continuous improvement.</p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="350">
+            <div class="service theme-shadow p-lg-4 p-3" style="background-color: orangered;">
+                <img src="https://i.pinimg.com/736x/f2/2a/45/f22a45156b44c047618b8d4e0bc64264.jpg" alt="Precision Forging" class="img-fluid mb-3" style="max-width: 200px;height: 120px;">
+                <h5 class="mt-4 mb-3"><b style="color: white">Values</b></h5>
+                <p style="text-align: justify;font-size: 18px;color: white">We are dedicated to minimizing our environmental footprint by adopting sustainable practices in our printing processes.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+	
+		<style>
+        /* CSS for Large Screens */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .col {
+            flex-basis: calc(25% - 10px); /* Adjust as per your requirement */
+            margin-bottom: 20px; /* Adjust spacing */
+        }
+        .col img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* CSS for Small Screens */
+        @media (max-width: 768px) {
+            .col {
+                flex-basis: calc(50% - 10px); /* Adjust as per your requirement */
+            }
+        }
+			
+			/* Define the transition for the product image */
+.col img {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Define the scale effect when hovering over the product image */
+.col img:hover {
+    transform: scale(1.1);
+}
+
+/* Style for the product name */
+.product-name {
+    text-align: center;
+    margin-top: 10px; /* Adjust as needed */
+}
+
+    </style>
+	
+	
+	
+	
+</html>
+
+</section>
+	
+	
+<section id="about">
+    <div class="container">
+        <div style="background-color: #f4f4f4; padding: 10px;">
+            <h1 style="text-align: center;">About us</h1>
+			<p style="text-align: center;">Dedicated for the development of printing industry<p>
+        </div>
+        <p style="text-align: justify;">This is a premier provider of flex printing services, dedicated to transforming your ideas into stunning visual creations. With a rich legacy spanning over [number of years] years, we have earned a reputation for excellence in the industry.</p>
+        <p style="text-align: justify;">At here, we understand the power of effective visual communication. That's why we are committed to delivering top-quality prints that captivate audiences and leave a lasting impression. Our state-of-the-art printing technology, combined with our team of skilled professionals, enables us to produce prints of unmatched clarity, color accuracy, and durability.</p>
+        <p style="text-align: justify;">But it's not just about the prints; it's about the experience. From the moment you reach out to us, you'll experience our commitment to exceptional customer service. Our team takes the time to understand your needs, provide personalized recommendations, and ensure that every aspect of your project is handled with care and attention to detail.</p>
+        <p style="text-align: justify;">Whether you're a small business looking to enhance your brand presence, an event planner in need of eye-catching signage, or an individual seeking personalized prints,is here to help. We believe in the power of collaboration and strive to be more than just a printing service provider; we aim to be your trusted partner in bringing your vision to life.</p>
+        <p style="text-align: justify;">Join countless satisfied clients who have trusted  for their printing needs. Experience the difference of working with a company that is passionate about quality, creativity, and customer satisfaction. Let us be your partner in turning your ideas into reality.</p>
+    </div>
+	
+	
+	
+</section>
+
+	
+<section id="service">
+    <div class="services-container">
+        <div class="row g-4 text-center row-bounce" style="margin-top: 10px;">
+            <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="150">
+                <div class="service theme-shadow p-lg-4 p-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz2nsqOh3S2BtFDTfj3aHfk1OA_UmDzbG3iBtj3dY52Q&s" alt="Printing Exhibition" class="img-fluid mb-3" style="max-width: 300px;height: 150px;">
+                    <h5 class="mt-4 mb-3"><b>Printing Exhibition</b></h5>
+                    <a href="" class="box-button">Learn More</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="250">
+                <div class="service theme-shadow p-lg-4 p-3">
+                    <img src="https://5.imimg.com/data5/UL/JT/MY-1023285/flex-printing-services-500x500.jpg" alt="Printing Services" class="img-fluid mb-3" style="max-width: 300px;height: 150px;">
+                    <h5 class="mt-4 mb-3"><b>Printing Services Services</b></h5>
+                    <a href="#home" class="box-button">Learn More</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="350">
+                <div class="service theme-shadow p-lg-4 p-3">
+                    <img src="https://4.imimg.com/data4/UE/GB/MY-1758295/flex-printing-machine-500x500.png" alt="Buy and Sell Machines" class="img-fluid mb-3" style="max-width: 300px;height: 150px;">
+                    <h5 class="mt-4 mb-3"><b>Buy and Sell Machines</b></h5>
+                    <a href="service3.html" class="box-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 text-center row-bounce" style="margin-top: 60px;">
+            <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="150">
+                <div class="service theme-shadow p-lg-4 p-3">
+                    <img src="https://i.pinimg.com/736x/0e/6d/27/0e6d27179ec66cf41e6a12f7b047cc8b.jpg" alt="Free Design Files" class="img-fluid mb-3" style="max-width: 300px;height: 150px;">
+                    <h5 class="mt-4 mb-3"><b>Free Design Files</b></h5>
+                    <a href="service4.html" class="box-button">Learn More</a><br>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="250">
+                <div class="service theme-shadow p-lg-4 p-3">
+                    <img src="https://www.qinprinting.com/wp-content/uploads/2023/02/Paper-Weight-Conversion-GSM-to-LBS.jpg" alt="Paper GSM Calculator" class="img-fluid mb-3" style="max-width: 300px;height: 150px;">
+                    <h5 class="mt-4 mb-3"><b>Paper GSM Calculator</b></h5>
+                    <a href="service5.html" class="box-button">Learn More</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="350">
+                <div class="service theme-shadow p-lg-4 p-3">
+                    <img src="https://img1.exportersindia.com/product_images/bc-full/2020/12/7841353/digital-printing-services-1607057901-5647795.jpeg" alt="Software Services" class="img-fluid mb-3" style="max-width: 300px;height: 150px;">
+                    <h5 class="mt-4 mb-3"><b>Software Services</b></h5>
+                    <a href="login.html" class="box-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<div class="row" style="margin-top: 60px;">
+    <h3 style="text-align: center; color: midnightblue;">Why Printers Choose Us</h3>
+    <div class="col-lg-6 col-md-10" style="background-color: f0f0f0; height: 40vh; margin-top: 30px">
+        <ul class="custom-bullets" style="color: black">
+            <li><i class="fa fa-cogs" aria-hidden="true" style="color: green; font-size: 30px;"></i> <strong style="font-size: 22px;">State-of-the-art Equipment</strong><br>We equip our facility with the latest flex printing machinery, ensuring precision and quality in every print job.</li>
+ 
+            <li><i class="fa fa-trophy" aria-hidden="true" style="color: green; font-size: 30px;"></i> <strong style="font-size: 22px;">Industry Recognition</strong><br>We are recognized as a top-tier flex printing service provider by industry experts and our peers, setting us apart in the market.</li>
+            <li><i class="fa fa-check-circle" aria-hidden="true" style="color: green; font-size: 30px;"></i> <strong style="font-size: 22px;">Quality Assurance</strong><br>Our commitment to quality extends to every aspect of our service, ensuring that every print meets the highest standards.</li>
+            
+        </ul>
+    </div>
+
+    <div class="col-lg-6 col-md-10" style="background-color: f0f0f0; height: 40vh; margin-top: 30px;">
+        <div class="content">
+            <ul class="custom-bullets" style="color: black">
+                <li><i class="fa fa-wrench" aria-hidden="true" style="color: green; font-size: 30px;"></i> <strong style="font-size: 22px;">Customization Options</strong><br>We offer a wide range of customization options, allowing printers to cater to diverse client needs and preferences.</li>
+                <li><i class="fa fa-balance-scale" aria-hidden="true" style="color: green; font-size: 30px;"></i> <strong style="font-size: 22px;">Competitive Pricing</strong><br>Our flexible pricing plans ensure that printers can maximize profitability without compromising on quality.</li>
+                <li><i class="fa fa-handshake" aria-hidden="true" style="color: green; font-size: 30px;"></i> <strong style="font-size: 22px;">Reliable Partnerships</strong><br>We prioritize building long-term relationships with printers, offering support and assistance every step of the way.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+.custom-bullets {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0; /* Remove default padding */
+}
+
+.custom-bullets li {
+    margin-bottom: 20px; /* Add spacing between items */
+}
+
+.custom-bullets li i {
+    margin-right: 10px; /* Add spacing between icon and text */
+}
+
+@media screen and (max-width: 768px) {
+    .col-lg-6.col-md-10:nth-child(2) > .content > .custom-bullets {
+        margin-top: -100px; /* Adjust the top margin for small screens */
+    }
+}
+</style>
+
+
+	
+	
+<style>
+	.custom-bullets {
+    list-style-type: none; /* Remove default bullets */
+}
+
+.custom-bullets li {
+    margin-bottom: 10px; /* Add spacing between items if needed */
+}
+
+.custom-bullets li i {
+    margin-right: 10px; /* Add spacing between icon and text if needed */
+}
+	@media screen and (max-width: 768px) {
+    .col-lg-6.col-md-10 > .content > .custom-bullets {
+        margin-top: 20px; /* Adjust the top margin for small screens */
+    }
+}
+
+
+
+
+
+	</style>
+	
+	
+	
+</section>
+
+	
+	<section id="contact" style="margin-top: 50px;">
+	<div class="contact-section">
+
+    <div class="contact-details">
+        <h4 style="color: black; margin-top: 10px;font-size: 28px;"><b>Contact Details</b></h4>
+
+         <ul>
+           
+            <li>
+				<h5 style="font-size: 20px;"><i class="ri-phone-fill icon"></i> Phone Number</h5>
+                <p style="font-size: 20px;"><a href="tel:+919579612342" style="color: black;">+91 </a></p>
+				
+            <li>
+				<li>
+				<h5 style="font-size: 20px;"><i class="ri-phone-fill icon"></i> Whatsapp Number</h5>
+                <p style="font-size: 20px;"><a href="tel:+919579612342" style="color: black;">+91 </a></p>
+				
+            <li>
+                <h5 style="font-size: 20px;"><i class="ri-mail-fill icon"></i> Email</h5>
+                <p style="font-size: 20px;"><a href="mailto:saptarshjyotish@gmail.com" style="color: black;">flexprinting@gmail.com</a></p>
+            </li>
+        </ul>
+		
+		
+
+    </div>
+
+    <div class="contact-form">
+    <form
+  action="https://formspree.io/f/xyyrbajp"
+  method="POST" class="border rounded p-4 shadow-lg bg-white" style="max-width: 500px; margin: 0 auto;">
+        <!-- Set max-width and margin for the form -->
+        <h4 class="mb-3"><b>Send Enquiry</b></h4>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Message:</label>
+            <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" class="form-control" id="phone" name="phone" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg mt-4" style="background-color:orangered;">Submit</button>
+
+    </form>
+</div>
+		</div>
+		
+		
+	
+<style>
+	
+	
+.contact-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 50px;
+	  margin-top: 10px;
+    }
+
+    .contact-details {
+        width: 45%;
+        color: #000; /* Black color */
+        padding: 20px;
+        border-radius: 0px;
+        
+    }
+
+    .contact-details h4 {
+        font-size: 24px;
+    }
+
+    .contact-details ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .contact-details li {
+        margin-bottom: 10px;
+    }
+
+    .contact-details a {
+        text-decoration: none;
+        color: #000; /* Black color */
+    }
+
+    .contact-form {
+        width: 50%;
+        margin-top: 10px;
+    }
+
+    .contact-form h4 {
+        color: black;
+    }
+
+    .contact-form form {
+        background-color: white;
+        color: #000; /* Black color */
+        padding: 20px;
+        border-radius: px;
+    }
+
+    .contact-form input,
+    .contact-form button {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+   .google-map {
+    width:100%; /* Adjust the width as needed, subtracting twice the margin-top */
+    height: 300px;
+    margin: 20px auto 0; /* Set top margin to 20px, and center horizontally with 'auto' */
+}
+
+
+
+   @media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+    }
+
+    .contact-details,
+    .contact-form,
+    .google-map {
+        width: 100%;
+        margin: 0; /* Add this line to reset margins */
+    }
+}
+
+	
+		</style>
+   
+
+		
+		</section>
+
+	
+<footer>
+    <div class="container2" style="background-color: black">
+        <div class="info-row" style="margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: space-around;">
+            <div class="additional-info" style="text-align: justify; flex-basis: 100%; max-width: 400px; margin-bottom: 20px;font-size: 22px">
+                <h3 style="font-size: 24px; color: white;text-align: justify">Useful Links</h3>
+               <style>
+    .arrow::before {
+        content: '\203A'; /* Unicode character for right-pointing single angle quotation mark */
+        color: blue;
+        margin-right: 5px; /* Adjust as needed */
+    }
+</style>
+
+<ul style="list-style-type: none; padding: 0;">
+    <li style="position: relative;"><a href="#home" style="font-size: 16px; color: white; text-decoration: none;"><span class="arrow"></span>Home</a></li>
+    <li style="position: relative;"><a href="#services" style="font-size: 16px; color: white; text-decoration: none;"><span class="arrow"></span>Services</a></li>
+    <li style="position: relative;"><a href="#blog" style="font-size: 16px; color: white; text-decoration: none;"><span class="arrow"></span>About</a></li>
+    <li style="position: relative;"><a href="#ask" style="font-size: 16px; color: white; text-decoration: none;"><span class="arrow"></span>Join Us</a></li>
+    <li style="position: relative;"><a href="#contact" style="font-size: 16px; color: white; text-decoration: none;"><span class="arrow"></span>Contact</a></li>
+</ul>
+
+            </div>
+           <style>
+    .arrow::before {
+        content: '\203A'; /* Unicode character for right-pointing single angle quotation mark */
+        color: blue;
+        margin-right: 5px; /* Adjust as needed */
+    }
+</style>
+
+<div class="additional-info" style="text-align: justify; flex-basis: 100%; max-width: 400px; margin-bottom: 20px; font-size: 22px;">
+    <h3 style="font-size: 24px; color: white;text-align: justify">Services</h3>
+    <ul style="list-style-type: none; padding: 0;">
+    <li id="services" style="position: relative;"><a href="#services" style="font-size: 16px; color: white; text-decoration: none;"><span class="arrow"></span>Printing Exhibition</a></li>
+    <li id="services" style="position: relative;"><a href="#services" style="font-size: 16px; color: white; text-decoration: none;"><span class="arrow"></span>Printing Services</a></li>
+    <li id="services" style="position: relative;"><a href="#services" style="font-size: 16px; color: white; text-decoration: none;"><span class="arrow"></span>Buy and Sell Machines</a></li>
+    <li id="services" style="position: relative;"><a href="#services" style="font-size: 16px; color: white; text-decoration: none;"><span class="arrow"></span>Free Design Files</a></li>
+    <li id="services" style="position: relative;"><a href="#services" style="font-size: 16px; color: white; text-decoration: none;"><span class="arrow"></span>Paper GSM Calculator</a></li>
+    <li id="services" style="position: relative;"><a href="#services" style="font-size: 16px; color: white; text-decoration: none;"><span class="arrow"></span>Software Services</a></li>
+  
+</ul>
+
+</div>
+
+         <div class="additional-info" style="text-align: justify; flex-basis: 100%; max-width: 400px; margin-bottom: 20px; font-size: 22px;">
+    <h3 style="font-size: 24px; color: white; text-align: justify;">Contact Us</h3>
+    <p style="font-size: 16px; color: white;">
+        WhatsApp No.: <a href="https://wa.me/9579612342" style="color: white;">+91-</a><br>
+        Phone No.: <a href="tel:+91-9579612342" style="color: white;">+91-</a><br>
+        Email: <a href="mailto:saptarshjyotish@gmail.com" style="color: white;">flexprinting@gmail.com</a>
+    </p>
+</div>
+
+
+
+        </div>
+    </div>
+</footer>
+	
+
+	</body>
+</html>
+	
+	

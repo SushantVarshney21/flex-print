@@ -1,0 +1,695 @@
+body {
+    margin: 0;
+    
+   background-color: white;
+	 background-color: #fff; 
+}
+
+@media (min-width: 992px) {
+            .navbar.navbar-expand-lg {
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+            }
+
+            .navbar-toggler {
+                display: none; /* Hide the toggler on larger screens */
+            }
+
+            .navbar-collapse {
+                display: block !important; /* Ensure the menu is visible on larger screens */
+            }
+        }
+
+        @media (max-width: 991px) {
+            .navbar-toggler {
+                display: block; /* Show the toggler on smaller screens */
+            }
+			.
+        }
+header {
+    background-color: white;
+   
+    padding: 20px 0;
+}
+
+
+
+.logo {
+    color: #000; /* Black color for the logo */
+    font-size: 1.2em;
+	left: 30px;
+	width: 20px; /* Adjust the width as per your requirement */
+    height: auto; /
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+	
+}
+
+
+
+.navbar-nav .nav-link {
+        position: relative;
+    }
+
+    
+.navbar li {
+    margin-right: 20px;
+	margin-left: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000; /* Black color for the menu items */
+    
+   
+}
+
+
+}
+.phone-number {
+        background-color:black;
+        color:white; /* red text */
+        padding: 15px px;
+	width: 120px;
+	height: 40px;
+	text-align: center;
+       
+        margin-left: 10px; /* adjust as needed */
+    }
+
+/* Responsive Styles */
+/* Existing CSS styles are the same as before */
+
+/* Add this style for hiding the menu on larger screens */
+/* Existing CSS styles are the same as before */
+
+/* Add this style for hiding the menu on larger screens */
+@media screen and (min-width: 769px) {
+    .navbar ul {
+        display: flex !important;
+    }
+
+    .menu-icon {
+        display: none; /* Hide the menu icon on larger screens */
+    }
+}
+
+/* Responsive Styles */
+
+#why-us {
+    background-color: #f5f5f5;
+    padding: 30px;
+}
+
+.why-us-content {
+    display: flex;
+    flex-direction: column-reverse; /* Reverse order for smaller screens */
+    align-items: center;
+}
+
+.why-us-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.why-us-paragraph {
+    max-width: 600px;
+    text-align: left;
+}
+
+
+#why {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+#home .slider {
+    flex: 1;
+    margin-right: 20px;
+}
+
+#why .content {
+    flex: 1;
+    padding: 20px;
+    background-color: beige;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 767px) {
+    .why-us-content {
+        flex-direction: column; /* Stack items vertically for smaller screens */
+    }
+
+    .why-us-image {
+        margin-bottom: 10px;
+    }
+
+    .why-us-paragraph {
+        max-width: 100%;
+    }
+
+    #why {
+        flex-direction: column;
+    }
+
+    #home .slider,
+    #why .content {
+        margin-right: 0;
+        flex: none;
+        width: 100%;
+    }
+}
+
+.highlight-paragraph {
+            color: #333; /* Paragraph text color */
+            margin-bottom: 20px; /* Adjust as needed */
+	        align-items: center
+        }
+
+        .bullet-points {
+            list-style-type: none; /* Remove default bullet points */
+            padding: 0;
+        }
+
+        .bullet-points li {
+            margin-bottom: 10px; /* Adjust as needed */
+            position: relative;
+            padding-left: 20px; /* Space for the red circle */
+        }
+
+        .bullet-points li::before {
+            content: '\2022'; /* Unicode character for a bullet point */
+            color: red; /* Red color for the bullet point */
+            font-size: 1.5em; /* Adjust as needed */
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+h1 {
+            font-size: 40px;
+            font-weight: bold;
+            color:black;
+            align-content: center;
+	
+            animation: underlineAnimation 1s infinite alternate; /* Add animation */
+        }
+.highlight-paragraph {
+            margin-bottom: 20px; /* Adjust as needed */
+        }
+
+        .bullet-points {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 0px; /* Adjust as needed */
+        }
+
+        .blink-list-item {
+            animation: blinkAnimation 2s infinite; /* Add blinking animation */
+        }
+
+        .container1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0px; /* Adjust as needed */
+        }
+
+        .centered-image-container1 {
+            display: flex;
+            align-items: center;
+            margin-top: 0; /* Remove the top margin */
+        }
+
+        .centered-image {
+            width: 400px;
+            height: auto;
+        }
+
+        @keyframes blinkAnimation {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+@keyframes blinkAnimation {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .blink-list-item {
+            animation: blinkAnimation 2s infinite; /* Add blinking animation */
+        }
+
+.container1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+	       
+        }
+
+        .centered-image-container1 {
+            display: flex;
+            align-items: center;
+        }
+
+        .centered-image {
+            width: 400px;
+            height: auto;
+        }
+        
+.custom-bullets {
+    list-style-type: none;
+    padding: 0;
+}
+
+.custom-bullets li {
+    position: relative;
+    padding-left: 20px; /* Adjust as needed */
+    margin-bottom: 10px;
+}
+
+.custom-bullets li::before {
+    content: '\2022'; /* Unicode character for bullet point */
+    color: red; /* Customize the color */
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+}
+
+section {
+    display: none;
+    padding: 2rem;
+    margin-top: 60px;
+    background-color: white;
+}
+
+#home {
+    display: block;
+    
+    
+    padding: 0px;
+    text-align: center;
+    
+}
+		
+		 .custom-background {
+    background: url('https://img.freepik.com/free-vector/gradient-cryptocurrency-concept_23-2149215736.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705536000&semt=ais') center/cover no-repeat;
+    padding: 70px; /* Adjust padding as needed */
+    color: white; /* Text color on the background */
+    width: 100%; /* Make the background full width */
+    background-size: 100% 100%; /* Ensure the background covers the entire container without any space */
+    min-height: 300px;
+			 display: block;/* Set a minimum height to avoid becoming too small on smaller screens */
+}
+		
+		.custom-background2 {
+    background: url('https://media.licdn.com/dms/image/C4D12AQE6WtWabVbTlQ/article-cover_image-shrink_720_1280/0/1632386278477?e=2147483647&v=beta&t=midgmmNRrS-Gr8nSyw19XfB6OA7cWTGr2tdqPsAUCw8') center/cover no-repeat;
+    padding: 70px; /* Adjust padding as needed */
+    color: white; /* Text color on the background */
+    height: 400px;
+    width: 100%; /* Make the background full width */
+    background-size: 100% 100%; /* Ensure the background covers the entire container without any space */
+    min-height: 300px;
+			 display: block;/* Set a minimum height to avoid becoming too small on smaller screens */
+}
+
+
+        /* Optionally, you can style the heading within the .custom-background class */
+        .custom-background h2 {
+            margin-top: 200px; /* Remove default margin for the heading */
+        }
+		.custom-background2 h2 {
+            margin-top: 200px; /* Remove default margin for the heading */
+        }
+		
+		.custom-background {
+    background: url('https://img.freepik.com/free-vector/gradient-cryptocurrency-concept_23-2149215736.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705536000&semt=ais') center/cover no-repeat;
+    padding: 10%; /* Adjust padding using a relative unit (percentage) */
+    color: white; /* Text color on the background */
+    width: 100%; /* Make the background full width */
+    background-size: 100% 100%; /* Ensure the background covers the entire container without any space */
+    min-height: 200px; /* Adjust the minimum height using a relative unit (pixels or percentage) */
+    display: block; /* Set a minimum height */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 767px) {
+    .custom-background {
+        padding: 10%; /* Adjust padding for smaller screens */
+        min-height: 200px; /* Adjust the minimum height for smaller screens */
+    }
+}
+
+		
+		
+		.custom-background2 {
+    background: url('https://media.licdn.com/dms/image/C4D12AQE6WtWabVbTlQ/article-cover_image-shrink_720_1280/0/1632386278477?e=2147483647&v=beta&t=midgmmNRrS-Gr8nSyw19XfB6OA7cWTGr2tdqPsAUCw8') center/cover no-repeat;
+    padding: 70px; /* Adjust padding as needed */
+    color: white; /* Text color on the background */
+    height: 400px;
+    width: 100%; /* Make the background full width */
+    background-size: 100% 100%; /* Ensure the background covers the entire container without any space */
+    min-height: 300px;
+			 display: block;/* Set a minimum height to avoid becoming too small on smaller screens */
+}
+
+
+        /* Optionally, you can style the heading within the .custom-background class */
+        .custom-background h2 {
+            margin-top: 200px; /* Remove default margin for the heading */
+        }
+		.custom-background2 h2 {
+            margin-top: 200px; /* Remove default margin for the heading */
+        } 
+
+		.custom-background3 {
+    background: url('https://previews.123rf.com/images/ismagilov/ismagilov1607/ismagilov160700452/59650455-businessman-drawing-abstract-financial-charts-and-map-on-light-background-global-business-concept.jpg') center/cover no-repeat;
+    padding: 70px; /* Adjust padding as needed */
+    color:black; /* Text color on the background */
+    height: 400px;
+    width: 100%; /* Make the background full width */
+    background-size: 100% 100%; /* Ensure the background covers the entire container without any space */
+    min-height: 300px;
+			 display: block;/* Set a minimum height to avoid becoming too small on smaller screens */
+}
+
+
+        /* Optionally, you can style the heading within the .custom-background class */
+        .custom-background3 h2 {
+            margin-top: 200px; 
+			color: black/* Remove default margin for the heading */
+        }
+		
+		.custom-background4 {
+    background: url('https://ak.picdn.net/shutterstock/videos/11727416/thumb/9.jpg?ip=x480') center/cover no-repeat;
+    padding: 70px; /* Adjust padding as needed */
+    color: white; /* Text color on the background */
+    height: 400px;
+    width: 100%; /* Make the background full width */
+    background-size: 100% 100%; /* Ensure the background covers the entire container without any space */
+    min-height: 300px;
+			 display: block;/* Set a minimum height to avoid becoming too small on smaller screens */
+}
+
+
+        /* Optionally, you can style the heading within the .custom-background class */
+       
+		.custom-background4 h2 {
+            margin-top: 200px;
+			color: white;/* Remove default margin for the heading */
+        }
+		.custom-background5 {
+    background: url('https://as1.ftcdn.net/v2/jpg/05/64/05/70/1000_F_564057074_z4fD06WmG523M0rxZk1uKRVNShnzfF8P.jpg') center/cover no-repeat;
+    padding: 70px; /* Adjust padding as needed */
+    color: white; /* Text color on the background */
+    height: 500px;
+    width: 100%; /* Make the background full width */
+    background-size: 100% 100%; /* Ensure the background covers the entire container without any space */
+    min-height: 300px;
+			 display: block;/* Set a minimum height to avoid becoming too small on smaller screens */
+}
+
+
+        /* Optionally, you can style the heading within the .custom-background class */
+       
+		.custom-background5 h2 {
+            margin-top: 200px; /* Remove default margin for the heading */
+        }
+#about
+
+.service {
+            /* Default styles */
+            position: relative;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 4rem;
+            overflow: hidden; /* Hide overflow for increased width on hover */
+            transition: background-color 0.3s ease; /* Transition effect for smooth changes */
+	        
+        }
+		
+		
+
+		
+		.colored-paragraph,
+.block {
+    padding: 20px;
+    color: black;
+    margin-top: 150px;
+}
+
+.colored-paragraph {
+    background-color: beige;
+}
+
+.block {
+    flex: 1;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Responsive styles for small screens */
+@media screen and (max-width: 767px) {
+    .colored-paragraph,
+    .block {
+        margin-top: 50px;
+    }
+}
+
+        .block:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .block {
+                flex: 1 0 100%;
+            }
+        }
+
+  /* Responsive styles for small devices */
+@media only screen and (max-width: 768px) {
+    .row.g-4 {
+        margin-top: 20px; /* Adjusted margin for small devices */
+    }
+}
+      
+
+        .iconbox {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.3s ease; /* Transition effect for smooth changes */
+        }
+
+
+/* Applying fadeIn animation to all h2 elements */
+h2 {
+    animation: fadeIn 1.5s ease-in-out;
+	color: wh/* Adjust the duration and timing function as needed */
+}
+
+/* Intersection Observer to trigger the throwIn animation */
+
+
+.service {
+            /* Default styles */
+            position: relative;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 4rem;
+            overflow: hidden; /* Hide overflow for increased width on hover */
+            transition: background-color 0.3s ease; /* Transition effect for smooth changes */
+	
+	margin-top: 0px;
+	margin-right: 20px;
+	margin-left: 20px;
+        }
+
+        .service:hover {
+            /* Hover styles */
+            background: linear-gradient(to top, #3498db 0%, #3498db 100%); /* Gradient from bottom to top */
+        }
+
+        .iconbox {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.3s ease; /* Transition effect for smooth changes */
+        }
+.box-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.box-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.box-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+
+        #home h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #home p {
+            font-size: 1.5em;
+        }
+
+        #home h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+		
+		@keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            animation: fadeIn 1.5s ease-in-out; 
+			/* Adjust the duration and timing function as needed */
+			color: white;
+			margin-top: 400px;
+			text-align: center
+        }
+
+        #home p {
+            font-size: 1.5em;
+        }
+/* Display the home section by default */
+        
+
+
+.contact-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 50px;
+	  margin-top: 10px;
+    }
+
+    .contact-details {
+        width: 45%;
+        color: #000; /* Black color */
+        padding: 20px;
+        border-radius: 0px;
+        
+    }
+
+    .contact-details h4 {
+        font-size: 24px;
+    }
+
+    .contact-details ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .contact-details li {
+        margin-bottom: 10px;
+    }
+
+    .contact-details a {
+        text-decoration: none;
+        color: #000; /* Black color */
+    }
+
+    .contact-form {
+        width: 50%;
+        margin-top: 10px;
+    }
+
+    .contact-form h4 {
+        color: black;
+    }
+
+    .contact-form form {
+        background-color: white;
+        color: #000; /* Black color */
+        padding: 20px;
+        border-radius: px;
+    }
+
+    .contact-form input,
+    .contact-form button {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+   .google-map {
+    width:100%; /* Adjust the width as needed, subtracting twice the margin-top */
+    height: 300px;
+    margin: 20px auto 0; /* Set top margin to 20px, and center horizontally with 'auto' */
+}
+
+
+
+   @media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+    }
+
+    .contact-details,
+    .contact-form,
+    .google-map {
+        width: 100%;
+        margin: 0; /* Add this line to reset margins */
+    }
+}
