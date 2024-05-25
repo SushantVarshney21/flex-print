@@ -144,6 +144,62 @@ h2{
 }
 
 
+.popup{
+    width: 400px;
+    background-color: rgba(255, 0, 0, 0.644);
+    border: radius 12px ;
+    padding: 18px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50% ) scale(0.1);
+    text-align: center;
+    visibility: hidden;
+    transition: transform 0.4s , top 0.4s;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.op{
+    visibility: visible;
+    top: 90%;
+    transform: translate(-50%, -50% ) scale(1);
+}
+
+.popup button{
+    position: absolute;
+    right: 6px;
+    top: 4px;
+    background-color:transparent ;
+}
+.popup h4{
+    margin-top: 18px;
+    font-size: 18px;
+}
+
+.popup .icon-con{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.popup .icon-con .icon{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 12px 0px;
+}
+ .popup .icon-con .icon i{
+    font-size: 22px;
+    color: #000;
+}
+
 @media screen and (max-width: 799px) {
     body{
         padding: 80px 10px;
