@@ -142,3 +142,13 @@ h2{
     font-size: 18px;
     font-weight: bold;
 }
+
+
+@media screen and (max-width: 799px) {
+    body{
+        padding: 80px 10px;
+    }
+    .data .left{
+        width: 100%;
+    }
+  }
