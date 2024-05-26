@@ -6,16 +6,184 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="priceCalculater.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+
+
+@media (min-width: 992px) {
+            .navbar.navbar-expand-lg {
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+            }
+
+            .navbar-toggler {
+                display: none; /* Hide the toggler on larger screens */
+            }
+
+            .navbar-collapse {
+                display: block !important; /* Ensure the menu is visible on larger screens */
+            }
+        }
+
+        @media (max-width: 991px) {
+            .navbar-toggler {
+                display: block; /* Show the toggler on smaller screens */
+            }
+			.
+        }
+header {
+    background-color: white;
+    padding: 20px 0;
+}
+
+
+
+.logo {
+    color: #000; /* Black color for the logo */
+    font-size: 1.2em;
+	left: 30px;
+	width: 20px; /* Adjust the width as per your requirement */
+    height: auto; /
+}
+
+.navbar {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+	
+}
+
+
+
+.navbar-nav .nav-link {
+        position: relative;
+    }
+
+    
+.navbar li {
+    margin-right: 20px;
+	margin-left: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000; /* Black color for the menu items */
+    
+   
+}
+
+
+
+.phone-number {
+        background-color:black;
+        color:white; /* red text */
+        padding: 15px px;
+	width: 120px;
+	height: 40px;
+	text-align: center;
+       
+        margin-left: 10px; /* adjust as needed */
+    }
+
+/* Responsive Styles */
+/* Existing CSS styles are the same as before */
+
+/* Add this style for hiding the menu on larger screens */
+/* Existing CSS styles are the same as before */
+
+/* Add this style for hiding the menu on larger screens */
+@media screen and (min-width: 769px) {
+    .navbar ul {
+        display: flex !important;
+    }
+
+    .menu-icon {
+        display: none; /* Hide the menu icon on larger screens */
+    }
+}
+
+    </style>
     <title>Document</title>
 </head>
 
 <body>
-    <h2>Add Order</h2>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand " href="#" style="margin-left:20px;">
+                    <!-- <img src="./service3_files/PRINTERS_CLUB_group_of_company_LOGO.png" alt="Logo" style="width: 320px; height: 130px"> -->
+                    <h2>Flex Printing</h2>
+                </a>
+    
+                <style>
+                    @media (max-width: 576px) {
+                        .navbar {
+                            background-color: white!important; /* Change the background color for small screens */
+                        }
+    
+                        .navbar-brand img {
+                            width: 100%;
+                            height: auto;
+                            max-width: 200px;
+                            max-height: 80px;
+                        }
+                    }
+    
+                    @media (min-width: 992px) {
+                        .navbar {
+                            background-color: white; /* Apply bg-light class on large screens */
+                        }
+                    }
+                </style>
+    
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" style="color: black"></span>
+                </button>
+            </div>
+    
+          <div class="container text-center">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#home" style="color:black;"><b>HOME</b></a></li>
+                <li class="nav-item"><a class="nav-link" href="#about" style="color: BLACK;"><b>ABOUT</b></a></li>
+                <li class="nav-item"><a class="nav-link" href="#service" style="color: black;"><b> SERVICES</b></a></li>
+                <li class="nav-item"><a class="nav-link" href="joinus.html" style="color: black;"><b>JOIN US</b></a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact" style="color:black;"><b>CONTACT</b></a></li>
+                 <li class="nav-item"><a class="nav-link" href="login.html" style="color: black;"><b>LOGIN</b></a></li>
+            </ul>
+        </div>
+    </div>
+    
+            </div>
+        </nav>
+    </header>
+    
+
+
+
+
+
+
+
+
+
+    <h2 class="add-order">Add Order</h2>
     <div class="popup" id="popup">
         <button onclick="closePopup()"><i class="fa-solid fa-circle-xmark"></i></button>
         <h4>Minimum order quantity is 5000 for "Delvery By Transport Travel" of this order for more information please contact our sales team</h4>
     </div>
-    <div class="data">
+    <div class="data" id="data">
         <div class="left">
             <form action="">
                 <label for="">Order Name</label>
@@ -29,8 +197,8 @@
                     <label for="">Select Detail</label>
                     <div class="detail-option">
                         <label for="">Quantity</label>
-                        <input type="number" required id="quantity">
-                        <p>(min quantity : 50)</p>
+                        <input type="number" step="500" min="500" value="500" required id="quantity">
+                        <p>(min quantity : 500)</p>
                     </div>
                     <div class="detail-option">
                         <label for="">Printing</label>
@@ -96,30 +264,43 @@
                     <div class="radio">
                         <label for="">Select File Option</label>
                         <div class="radio-btn">
-                            <input type="radio" name="file" value="Attach file online">Attach file online
-                            <input type="radio" name="file" value="Send file via Email">Send file via Email
+                            <div class="radio-btn-data">
+                                <input type="radio" name="file" value="Attach file online" onclick="showPara1()">Attach file online 
+                            <p id="para1">(Allowed file: 96 x 58 mm, 30.00 MB, PDF Only)</p>
+                            </div>
+                            <div class="radio-btn-data">
+                                <input type="radio" name="file" value="Send file via Email" onclick="showPara2()" >Send file via Email
+                                <p id="para2">(Extra Charge - Rs 20.00 is applicable)</p>
+                            </div>
                         </div>
                     </div>
                     <div class="radio">
                         <label for="">Select Delivery Option</label>
                         <div class="radio-btn">
-                            <input type="radio" name="delivery" value="Send file via Email"> Door delivery by Courier
-                            <input type="radio" name="delivery" value="Deliver by transport travels"
+                            <input type="radio" name="delivery" value="Door delivery by Courier" onclick="courierOption()"> Door delivery by Courier
+                            <input id="transport-travel" type="radio" name="delivery" value="Deliver by transport travels"
                                 onclick="onPopup()">Deliver by transport travels
                         </div>
+                       <div class="courier-hide" id="courier">
+                        <label for="product">Select Courier Option</label>
+                        <select name="" id="courier-select" required onchange="getResult()">
+                            <option value="select">Select</option>
+                            <option value="Delhi Delivery by company"   >Delhi Delivery by company</option>
+                        </select>
+                       </div>
                     </div>
                     <div class="result">
                         <div class="res-op">
                             <p>Cost</p>
-                            <p>Rs 0/-</p>
+                            <p id="cost">Rs 0/-</p>
                         </div>
                         <div class="res-op">
                             <p>GST (18.00%)</p>
-                            <p>Rs 0/-</p>
+                            <p id="gst">Rs 0/-</p>
                         </div>
                         <div class="res-op">
                             <p>Amount Payable</p>
-                            <p>Rs 0/-</p>
+                            <p id="amount">Rs 0/-</p>
                         </div>
                         <div class="text">
                             <label for="">Special Remark(optional)</label>
@@ -152,7 +333,38 @@
         }
 
         function closePopup() {
+            const transportTravel = document.getElementById("transport-travel")
             popup.classList.remove("op")
+            transportTravel.checked = false
+        }
+
+        function courierOption(){
+            // document.getElementsByClassName("courier").style.display = "block"
+            const courier = document.getElementById("courier")
+            courier.classList.add("courier-show")
+        }
+
+        function getResult(){
+            const courierSelect = document.getElementById("courier-select").value
+
+            if(courierSelect=="Delhi Delivery by company"){
+                document.getElementById("cost").innerHTML = "Rs. 849/-"
+            document.getElementById("gst").innerHTML = "Rs 152.82/-"
+            document.getElementById("amount").innerHTML = "Rs 1001.82/-"
+            }
+            else{
+                document.getElementById("cost").innerHTML = "Rs. 0/-"
+            document.getElementById("gst").innerHTML = "Rs 0/-"
+            document.getElementById("amount").innerHTML = "Rs 0/-"
+            }
+        }
+        function showPara1(){
+            const para = document.getElementById("para1")
+            para.style.display = "block"
+        }
+        function showPara2(){
+            const para = document.getElementById("para2")
+            para.style.display = "block"
         }
     </script>
 </body>
