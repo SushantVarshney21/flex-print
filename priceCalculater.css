@@ -28,6 +28,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 .data .left{
     width: 50%;
@@ -223,12 +224,48 @@ body{
     color: #000;
 }
 
+.data .right{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: 30px;
+    position: absolute;
+    top: 7%;
+    left: 50%;
+}
+.data .right .img{
+    width: 100%;
+    height: 350px;
+}
+.data .right .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.data .right ul h4{
+    margin-top: 30px;
+    margin-bottom: 12px;
+}
+
+
 @media screen and (max-width: 799px) {
     .data{
         width: 100%;
         padding: 80px 10px;
+        flex-direction: column;
     }
     .data .left{
         width: 100%;
     }
+    .data .right{
+        width: 90%;
+        position: relative;
+        margin-left: 0px;
+        margin-top: 20px;
+        left: 0;
+    }
   }
+
